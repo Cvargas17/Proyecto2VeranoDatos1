@@ -47,4 +47,16 @@ class Notamusical
             default: return negra;
         }
     }
+
+    public override string ToString()
+    {
+        return $"{nombre} - {figura} - {duracion:0.###} s - {frecuencia:0.##} Hz";
+    }
 }
+
+using System.Windows.Forms;
+
+[STAThread]
+Application.EnableVisualStyles();
+Application.SetCompatibleTextRenderingDefault(false);
+Application.Run(new Music_box.MainForm());
