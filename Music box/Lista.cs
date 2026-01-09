@@ -6,8 +6,8 @@ namespace Miusic_box
     public class Nodo<T>
 {
     public T Datos { get; set; }
-    public Nodo<T> Siguiente { get; set; }
-    public Nodo<T> Anterior { get; set; }
+    public Nodo<T>? Siguiente { get; set; }
+    public Nodo<T>? Anterior { get; set; }
 
     public Nodo(T datos)
     {
@@ -19,8 +19,8 @@ namespace Miusic_box
 
 public class ListaDobleEnlazada<T>
 {
-    private Nodo<T> cabeza;
-    private Nodo<T> cola;
+    private Nodo<T>? cabeza;
+    private Nodo<T>? cola;
     private int cantidad;
 
     public ListaDobleEnlazada()
@@ -42,44 +42,11 @@ public class ListaDobleEnlazada<T>
         }
         else
         {
-            cola.Siguiente = nuevoNodo;
+            cola!.Siguiente = nuevoNodo;
             nuevoNodo.Anterior = cola;
             cola = nuevoNodo;
         }
         cantidad++;
-    }
-
-    // Agregar al inicio
-    public void AgregarAlInicio(T datos)
-    {
-        Nodo<T> nuevoNodo = new Nodo<T>(datos);
-
-        if (cabeza == null)
-        {
-            cabeza = nuevoNodo;
-            cola = nuevoNodo;
-        }
-        else
-        {
-            nuevoNodo.Siguiente = cabeza;
-            cabeza.Anterior = nuevoNodo;
-            cabeza = nuevoNodo;
-        }
-        cantidad++;
-    }
-
-    // Obtener elemento en índice
-    public T ObtenerEnIndice(int indice)
-    {
-        if (indice < 0 || indice >= cantidad)
-            throw new IndexOutOfRangeException("Índice fuera de rango");
-
-        Nodo<T> actual = cabeza;
-        for (int i = 0; i < indice; i++)
-        {
-            actual = actual.Siguiente;
-        }
-        return actual.Datos;
     }
 
     // Eliminar en índice
@@ -88,13 +55,13 @@ public class ListaDobleEnlazada<T>
         if (indice < 0 || indice >= cantidad)
             throw new IndexOutOfRangeException("Índice fuera de rango");
 
-        Nodo<T> actual = cabeza;
+        Nodo<T>? actual = cabeza;
         for (int i = 0; i < indice; i++)
         {
-            actual = actual.Siguiente;
+            actual = actual!.Siguiente;
         }
 
-        if (actual.Anterior != null)
+        if (actual!.Anterior != null)
             actual.Anterior.Siguiente = actual.Siguiente;
         else
             cabeza = actual.Siguiente;
@@ -128,9 +95,9 @@ public class ListaDobleEnlazada<T>
     }
 
     // Recorrer hacia adelante
-    public IEnumerator<T> ObtenerEnumerador()
+    public IEnumerable<T> ObtenerEnumerador()
     {
-        Nodo<T> actual = cabeza;
+        Nodo<T>? actual = cabeza;
         while (actual != null)
         {
             yield return actual.Datos;
@@ -139,14 +106,13 @@ public class ListaDobleEnlazada<T>
     }
 
     // Recorrer hacia atrás
-    public IEnumerator<T> ObtenerEnumeradorInverso()
+    public IEnumerable<T> ObtenerEnumeradorInverso()
     {
-        Nodo<T> actual = cola;
+        Nodo<T>? actual = cola;
         while (actual != null)
         {
             yield return actual.Datos;
             actual = actual.Anterior;
         }
     }
-} 
 }
