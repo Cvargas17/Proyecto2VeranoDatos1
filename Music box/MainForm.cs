@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using Miusic_box;
+using Microsoft.VisualBasic;
 
 namespace Music_box
 {
@@ -37,7 +38,7 @@ namespace Music_box
             btnAgregar = new Button() { Left = 10, Top = 10, Width = 120, Text = "Agregar nota" };
             btnMostrar = new Button() { Left = 140, Top = 10, Width = 120, Text = "Mostrar notas" };
             txtInput = new TextBox() { Left = 280, Top = 12, Width = 170 };
-            btnGuardar = new Button() { Left = 460, Top = 10, Width = 90, Text = "Guardar" };
+            btnGuardar = new Button() { Left = 460, Top = 10, Width = 120, Text = "Cambiar Duración" };
             btnPlay = new Button() { Left = 10, Top = 40, Width = 120, Text = "Play" };
             btnReversa = new Button() { Left = 140, Top = 40, Width = 120, Text = "Reversa" };
             btnLoop = new Button() { Left = 280, Top = 40, Width = 120, Text = "Loop: Off" };
@@ -109,8 +110,26 @@ namespace Music_box
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            // Este botón se puede usar para verificar las notas guardadas
-            MessageBox.Show($"Se guardaron {listaNotas.ObtenerCantidad()} notas.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Mostrar diálogo para cambiar la duración de la negra
+            string input = Microsoft.VisualBasic.Interaction.InputBox(
+                $"Ingrese la nueva duración de la negra (segundos).\nDuración actual: {duracionNegra:0.###}",
+                "Cambiar Duración",
+                duracionNegra.ToString());
+
+            if (string.IsNullOrEmpty(input))
+                return;
+
+            if (double.TryParse(input, out double nuevaDuracion) && nuevaDuracion > 0)
+            {
+                duracionNegra = nuevaDuracion;
+                MessageBox.Show($"Duración de negra actualizada a {duracionNegra:0.###} segundos.", 
+                                "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Por favor ingrese un número válido mayor a 0.", 
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtnPlay_Click(object sender, EventArgs e)
