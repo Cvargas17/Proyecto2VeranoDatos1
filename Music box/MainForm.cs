@@ -58,9 +58,30 @@ namespace Music_box
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            // Añade una nota de ejemplo
-            var nota = new Notamusical(Nota.DO, Figura.NEGRA, 1.0);
-            lstNotas.Items.Add(nota);
+            string input = txtInput.Text.Trim().ToUpper();
+            if (string.IsNullOrEmpty(input))
+            {
+                MessageBox.Show("Ingrese una nota y figura.\nEjemplo: DO NEGRA",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!Enum.TryParse(partes[0], out Notas nota))
+            {
+                MessageBox.Show("Nota inválida. Use: DO, RE, MI, FA, SOL, LA, SI.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!Enum.TryParse(partes[1], out Figura figura))
+            {
+                MessageBox.Show("Figura inválida. Use: REDONDA, BLANCA, NEGRA, CORCHEA, SEMICORCHEA.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Notamusical nuevaNota = new Notamusical(nota, figura, 1.0);
+
+            lstNotas.Items.add(nuevaNota);
+            txtInput.Clear();
         }
 
         private void BtnMostrar_Click(object sender, EventArgs e)
