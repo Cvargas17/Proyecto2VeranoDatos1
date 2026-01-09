@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using Miusic_box;
 
 namespace Music_box
 {
@@ -14,9 +15,13 @@ namespace Music_box
         private Button btnPlay;
         private Button btnReversa;
         private Button btnLoop;
+        private Button btnPausa;
 
-        private ListaDobleEnlazada<string> listaTextos = new ListaDobleEnlazada<string>();
+        private ListaDobleEnlazada<Notamusical> listaNotas = new ListaDobleEnlazada<Notamusical>();
         private bool isLooping = false;
+        private bool isPaused = false;
+        private double duracionNegra = 0.5; // duración en segundos para una negra
+        private System.Threading.Thread reproduccionThread;
 
         public MainForm()
         {
@@ -36,6 +41,7 @@ namespace Music_box
             btnPlay = new Button() { Left = 10, Top = 40, Width = 120, Text = "Play" };
             btnReversa = new Button() { Left = 140, Top = 40, Width = 120, Text = "Reversa" };
             btnLoop = new Button() { Left = 280, Top = 40, Width = 120, Text = "Loop: Off" };
+            btnPausa = new Button() { Left = 410, Top = 40, Width = 140, Text = "Pausa", Enabled = false };
 
             lstNotas = new ListBox() { Left = 10, Top = 80, Width = 540, Height = 270 };
 
@@ -45,6 +51,7 @@ namespace Music_box
             btnPlay.Click += BtnPlay_Click;
             btnReversa.Click += BtnReversa_Click;
             btnLoop.Click += BtnLoop_Click;
+            btnPausa.Click += BtnPausa_Click;
 
             this.Controls.Add(btnAgregar);
             this.Controls.Add(btnMostrar);
@@ -53,6 +60,7 @@ namespace Music_box
             this.Controls.Add(btnPlay);
             this.Controls.Add(btnReversa);
             this.Controls.Add(btnLoop);
+            this.Controls.Add(btnPausa);
             this.Controls.Add(lstNotas);
         }
 
@@ -65,7 +73,16 @@ namespace Music_box
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (!Enum.TryParse(partes[0], out Notas nota))
+
+            string[] partes = input.Split(' ');
+            if (partes.Length < 2)
+            {
+                MessageBox.Show("Ingrese una nota y figura.\nEjemplo: DO NEGRA",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!Enum.TryParse(partes[0], out Nota nota))
             {
                 MessageBox.Show("Nota inválida. Use: DO, RE, MI, FA, SOL, LA, SI.",
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -78,59 +95,95 @@ namespace Music_box
                 return;
             }
 
-            Notamusical nuevaNota = new Notamusical(nota, figura, 1.0);
+            Notamusical nuevaNota = new Notamusical(nota, figura, duracionNegra);
 
-            lstNotas.Items.add(nuevaNota);
+            listaNotas.Agregar(nuevaNota);
+            lstNotas.Items.Add(nuevaNota.ToString());
             txtInput.Clear();
         }
 
         private void BtnMostrar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Hay {lstNotas.Items.Count} notas en la lista.", "Notas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Hay {listaNotas.ObtenerCantidad()} notas en la lista.", "Notas", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            var texto = txtInput.Text?.Trim();
-            if (string.IsNullOrEmpty(texto))
-            {
-                MessageBox.Show("Ingrese texto antes de guardar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            listaTextos.Agregar(texto);
-            lstNotas.Items.Add(texto);
-            txtInput.Clear();
+            // Este botón se puede usar para verificar las notas guardadas
+            MessageBox.Show($"Se guardaron {listaNotas.ObtenerCantidad()} notas.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BtnPlay_Click(object sender, EventArgs e)
         {
-            if (listaTextos.ObtenerCantidad() == 0)
+            if (listaNotas.ObtenerCantidad() == 0)
             {
                 MessageBox.Show("No hay elementos para reproducir.", "Play", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            var en = listaTextos.ObtenerEnumerador();
-            var items = new List<string>();
-            while (en.MoveNext()) items.Add(en.Current);
+            isPaused = false;
+            btnPausa.Enabled = true;
+            btnPausa.Text = "Pausa";
+            reproduccionThread = new System.Threading.Thread(() => ReproducirNotas(false))
+            {
+                IsBackground = true
+            };
+            reproduccionThread.Start();
+        }
 
-            MessageBox.Show("Play: " + string.Join(", ", items), "Play", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void ReproducirNotas(bool reversa)
+        {
+            var enumerador = reversa ? listaNotas.ObtenerEnumeradorInverso() : listaNotas.ObtenerEnumerador();
+            
+            do
+            {
+                foreach (var nota in enumerador)
+                {
+                    if (isPaused)
+                    {
+                        // Esperar mientras esté pausado
+                        while (isPaused)
+                        {
+                            System.Threading.Thread.Sleep(100);
+                        }
+                    }
+                    nota.Reproducir();
+                    System.Threading.Thread.Sleep(100); // pequeña pausa entre notas
+                }
+                
+                // Si no estamos en loop, salir del bucle
+                if (!isLooping)
+                    break;
+                    
+                // Reiniciar el enumerador para el siguiente ciclo de loop
+                enumerador = reversa ? listaNotas.ObtenerEnumeradorInverso() : listaNotas.ObtenerEnumerador();
+            } while (isLooping);
+            
+            // Deshabilitar el botón de pausa al terminar
+            this.Invoke((MethodInvoker)(() =>
+            {
+                btnPausa.Enabled = false;
+                btnPausa.Text = "Pausa";
+                isPaused = false;
+            }));
         }
 
         private void BtnReversa_Click(object sender, EventArgs e)
         {
-            if (listaTextos.ObtenerCantidad() == 0)
+            if (listaNotas.ObtenerCantidad() == 0)
             {
                 MessageBox.Show("No hay elementos para reproducir.", "Reversa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            var en = listaTextos.ObtenerEnumeradorInverso();
-            var items = new List<string>();
-            while (en.MoveNext()) items.Add(en.Current);
-
-            MessageBox.Show("Reversa: " + string.Join(", ", items), "Reversa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            isPaused = false;
+            btnPausa.Enabled = true;
+            btnPausa.Text = "Pausa";
+            reproduccionThread = new System.Threading.Thread(() => ReproducirNotas(true))
+            {
+                IsBackground = true
+            };
+            reproduccionThread.Start();
         }
 
         private void BtnLoop_Click(object sender, EventArgs e)
@@ -138,6 +191,13 @@ namespace Music_box
             isLooping = !isLooping;
             btnLoop.Text = isLooping ? "Loop: On" : "Loop: Off";
             btnLoop.BackColor = isLooping ? System.Drawing.Color.LightGreen : System.Drawing.SystemColors.Control;
+        }
+
+        private void BtnPausa_Click(object sender, EventArgs e)
+        {
+            isPaused = !isPaused;
+            btnPausa.Text = isPaused ? "Reanudar" : "Pausa";
+            btnPausa.BackColor = isPaused ? System.Drawing.Color.Yellow : System.Drawing.SystemColors.Control;
         }
     }
 }

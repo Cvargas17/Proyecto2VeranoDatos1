@@ -56,6 +56,12 @@ namespace Music_box
         {
             return $"{nombre} - {figura} - {duracion:0.###} s - {frecuencia:0.##} Hz";
         }
+
+        public void Reproducir()
+        {
+            int duracionMs = (int)(duracion * 1000);
+            Console.Beep((int)frecuencia, duracionMs);
+        }
     }
 
     static class Program
