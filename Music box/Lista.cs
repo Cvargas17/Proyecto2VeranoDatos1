@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-public class Nodo<T>
+namespace Miusic_box
+{
+    public class Nodo<T>
 {
     public T Datos { get; set; }
     public Nodo<T> Siguiente { get; set; }
@@ -146,4 +148,5 @@ public class ListaDobleEnlazada<T>
             actual = actual.Anterior;
         }
     }
+} 
 }

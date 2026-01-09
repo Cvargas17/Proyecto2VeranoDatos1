@@ -56,19 +56,19 @@ namespace Music_box
             this.Controls.Add(lstNotas);
         }
 
-        private void BtnAgregar_Click(object? sender, EventArgs e)
+        private void BtnAgregar_Click(object sender, EventArgs e)
         {
             // Añade una nota de ejemplo
             var nota = new Notamusical(Nota.DO, Figura.NEGRA, 1.0);
             lstNotas.Items.Add(nota);
         }
 
-        private void BtnMostrar_Click(object? sender, EventArgs e)
+        private void BtnMostrar_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"Hay {lstNotas.Items.Count} notas en la lista.", "Notas", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void BtnGuardar_Click(object? sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
             var texto = txtInput.Text?.Trim();
             if (string.IsNullOrEmpty(texto))
@@ -82,7 +82,7 @@ namespace Music_box
             txtInput.Clear();
         }
 
-        private void BtnPlay_Click(object? sender, EventArgs e)
+        private void BtnPlay_Click(object sender, EventArgs e)
         {
             if (listaTextos.ObtenerCantidad() == 0)
             {
@@ -97,7 +97,7 @@ namespace Music_box
             MessageBox.Show("Play: " + string.Join(", ", items), "Play", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void BtnReversa_Click(object? sender, EventArgs e)
+        private void BtnReversa_Click(object sender, EventArgs e)
         {
             if (listaTextos.ObtenerCantidad() == 0)
             {
@@ -112,7 +112,7 @@ namespace Music_box
             MessageBox.Show("Reversa: " + string.Join(", ", items), "Reversa", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void BtnLoop_Click(object? sender, EventArgs e)
+        private void BtnLoop_Click(object sender, EventArgs e)
         {
             isLooping = !isLooping;
             btnLoop.Text = isLooping ? "Loop: On" : "Loop: Off";
