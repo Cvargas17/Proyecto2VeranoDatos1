@@ -1,0 +1,15 @@
+f:\repos\Proyecto2VeranoDatos1\Music box\obj\Debug\net10.0-windows\Music box.GeneratedMSBuildEditorConfig.editorconfig
+f:\repos\Proyecto2VeranoDatos1\Music box\obj\Debug\net10.0-windows\Music box.AssemblyInfoInputs.cache
+f:\repos\Proyecto2VeranoDatos1\Music box\obj\Debug\net10.0-windows\Music box.AssemblyInfo.cs
+f:\repos\Proyecto2VeranoDatos1\Music box\obj\Debug\net10.0-windows\Music box.csproj.CoreCompileInputs.cache
+f:\repos\Proyecto2VeranoDatos1\Music box\obj\Debug\net10.0-windows\Music box.sourcelink.json
+f:\repos\Proyecto2VeranoDatos1\Music box\bin\Debug\net10.0-windows\Music box.exe
+f:\repos\Proyecto2VeranoDatos1\Music box\bin\Debug\net10.0-windows\Music box.deps.json
+f:\repos\Proyecto2VeranoDatos1\Music box\bin\Debug\net10.0-windows\Music box.runtimeconfig.json
+f:\repos\Proyecto2VeranoDatos1\Music box\bin\Debug\net10.0-windows\Music box.dll
+f:\repos\Proyecto2VeranoDatos1\Music box\bin\Debug\net10.0-windows\Music box.pdb
+f:\repos\Proyecto2VeranoDatos1\Music box\obj\Debug\net10.0-windows\Music box.dll
+f:\repos\Proyecto2VeranoDatos1\Music box\obj\Debug\net10.0-windows\refint\Music box.dll
+f:\repos\Proyecto2VeranoDatos1\Music box\obj\Debug\net10.0-windows\Music box.pdb
+f:\repos\Proyecto2VeranoDatos1\Music box\obj\Debug\net10.0-windows\Music box.genruntimeconfig.cache
+f:\repos\Proyecto2VeranoDatos1\Music box\obj\Debug\net10.0-windows\ref\Music box.dll
