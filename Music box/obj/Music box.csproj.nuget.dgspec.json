@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "f:\\repos\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj": {}
+    "F:\\repos\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj": {}
   },
   "projects": {
-    "f:\\repos\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj": {
+    "F:\\repos\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "f:\\repos\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj",
+        "projectUniqueName": "F:\\repos\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj",
         "projectName": "Music box",
-        "projectPath": "f:\\repos\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj",
+        "projectPath": "F:\\repos\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj",
         "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "f:\\repos\\Proyecto2VeranoDatos1\\Music box\\obj\\",
+        "outputPath": "F:\\repos\\Proyecto2VeranoDatos1\\Music box\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config"
