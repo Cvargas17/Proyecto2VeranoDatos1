@@ -39,7 +39,7 @@ namespace Music_box
                 default: return 0;
             }
         }
-        private double CalcularDuracion(Figura figura, double negra)
+        public double CalcularDuracion(Figura figura, double negra)
         {
             switch (figura)
             {
@@ -50,6 +50,13 @@ namespace Music_box
                 case Figura.SEMICORCHEA: return negra / 4;
                 default: return negra;
             }
+        }
+
+        public void ActualizarDuracion(double nuevaDuracionNegra)
+        {
+            double duracionAnterior = this.duracion;
+            this.duracion = CalcularDuracion(figura, nuevaDuracionNegra);
+            Console.WriteLine($"Actualizado {nombre} {figura}: {duracionAnterior:0.###}s -> {this.duracion:0.###}s");
         }
 
         public override string ToString()

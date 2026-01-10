@@ -21,7 +21,7 @@ namespace Music_box
         private ListaDobleEnlazada<Notamusical> listaNotas = new ListaDobleEnlazada<Notamusical>();
         private bool isLooping = false;
         private bool isPaused = false;
-        private double duracionNegra = 0.5; // duración en segundos para una negra
+        private double duracionNegra = 0.1; // duración en segundos para una negra
         private System.Threading.Thread reproduccionThread;
 
         public MainForm()
@@ -122,7 +122,23 @@ namespace Music_box
             if (double.TryParse(input, out double nuevaDuracion) && nuevaDuracion > 0)
             {
                 duracionNegra = nuevaDuracion;
-                MessageBox.Show($"Duración de negra actualizada a {duracionNegra:0.###} segundos.", 
+
+                // Actualizar duración de todas las notas en la lista
+                int notasActualizadas = 0;
+                foreach (var nota in listaNotas.ObtenerEnumerador())
+                {
+                    nota.ActualizarDuracion(nuevaDuracion);
+                    notasActualizadas++;
+                }
+
+                // Actualizar la visualización en el ListBox
+                lstNotas.Items.Clear();
+                foreach (var nota in listaNotas.ObtenerEnumerador())
+                {
+                    lstNotas.Items.Add(nota.ToString());
+                }
+
+                MessageBox.Show($"Duración de negra actualizada a {duracionNegra:0.###} segundos.\nNotas actualizadas: {notasActualizadas}", 
                                 "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
