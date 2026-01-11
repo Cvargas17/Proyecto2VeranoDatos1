@@ -102,3 +102,14 @@ C:\Users\fbarr\OneDrive\Documentos\GitHub\Proyecto2VeranoDatos1\MusicBox.Tests\o
 C:\Users\fbarr\OneDrive\Documentos\GitHub\Proyecto2VeranoDatos1\MusicBox.Tests\obj\Debug\net10.0-windows\MusicBox.Tests.pdb
 C:\Users\fbarr\OneDrive\Documentos\GitHub\Proyecto2VeranoDatos1\MusicBox.Tests\obj\Debug\net10.0-windows\MusicBox.Tests.genruntimeconfig.cache
 C:\Users\fbarr\OneDrive\Documentos\GitHub\Proyecto2VeranoDatos1\MusicBox.Tests\obj\Debug\net10.0-windows\ref\MusicBox.Tests.dll
+C:\Users\Fared\OneDrive\Desktop\semestres\Verano-1\Proyecto #2\Proyecto2VeranoDatos1\MusicBox.Tests\bin\Debug\net10.0-windows\.msCoverageSourceRootsMapping_MusicBox.Tests
+C:\Users\Fared\OneDrive\Desktop\semestres\Verano-1\Proyecto #2\Proyecto2VeranoDatos1\MusicBox.Tests\bin\Debug\net10.0-windows\CoverletSourceRootsMapping_MusicBox.Tests
+C:\Users\Fared\OneDrive\Desktop\semestres\Verano-1\Proyecto #2\Proyecto2VeranoDatos1\MusicBox.Tests\obj\Debug\net10.0-windows\MusicBox.Tests.csproj.AssemblyReference.cache
+C:\Users\Fared\OneDrive\Desktop\semestres\Verano-1\Proyecto #2\Proyecto2VeranoDatos1\MusicBox.Tests\obj\Debug\net10.0-windows\MusicBox.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fared\OneDrive\Desktop\semestres\Verano-1\Proyecto #2\Proyecto2VeranoDatos1\MusicBox.Tests\obj\Debug\net10.0-windows\MusicBox.Tests.AssemblyInfoInputs.cache
+C:\Users\Fared\OneDrive\Desktop\semestres\Verano-1\Proyecto #2\Proyecto2VeranoDatos1\MusicBox.Tests\obj\Debug\net10.0-windows\MusicBox.Tests.AssemblyInfo.cs
+C:\Users\Fared\OneDrive\Desktop\semestres\Verano-1\Proyecto #2\Proyecto2VeranoDatos1\MusicBox.Tests\obj\Debug\net10.0-windows\MusicBox.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Fared\OneDrive\Desktop\semestres\Verano-1\Proyecto #2\Proyecto2VeranoDatos1\MusicBox.Tests\obj\Debug\net10.0-windows\MusicBox.Tests.sourcelink.json
+C:\Users\Fared\OneDrive\Desktop\semestres\Verano-1\Proyecto #2\Proyecto2VeranoDatos1\MusicBox.Tests\obj\Debug\net10.0-windows\MusicBox.Tests.dll
+C:\Users\Fared\OneDrive\Desktop\semestres\Verano-1\Proyecto #2\Proyecto2VeranoDatos1\MusicBox.Tests\obj\Debug\net10.0-windows\refint\MusicBox.Tests.dll
+C:\Users\Fared\OneDrive\Desktop\semestres\Verano-1\Proyecto #2\Proyecto2VeranoDatos1\MusicBox.Tests\obj\Debug\net10.0-windows\MusicBox.Tests.pdb
