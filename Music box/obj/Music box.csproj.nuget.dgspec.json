@@ -1,29 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fbarr\\OneDrive\\Documentos\\GitHub\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj": {}
+    "C:\\Users\\Fared\\OneDrive\\Desktop\\semestres\\Verano-1\\Proyecto #2\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fbarr\\OneDrive\\Documentos\\GitHub\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj": {
+    "C:\\Users\\Fared\\OneDrive\\Desktop\\semestres\\Verano-1\\Proyecto #2\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fbarr\\OneDrive\\Documentos\\GitHub\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj",
+        "projectUniqueName": "C:\\Users\\Fared\\OneDrive\\Desktop\\semestres\\Verano-1\\Proyecto #2\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj",
         "projectName": "Music box",
-        "projectPath": "C:\\Users\\fbarr\\OneDrive\\Documentos\\GitHub\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj",
-        "packagesPath": "C:\\Users\\fbarr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fbarr\\OneDrive\\Documentos\\GitHub\\Proyecto2VeranoDatos1\\Music box\\obj\\",
+        "projectPath": "C:\\Users\\Fared\\OneDrive\\Desktop\\semestres\\Verano-1\\Proyecto #2\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj",
+        "packagesPath": "C:\\Users\\Fared\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Fared\\OneDrive\\Desktop\\semestres\\Verano-1\\Proyecto #2\\Proyecto2VeranoDatos1\\Music box\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\fbarr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+          "C:\\Users\\Fared\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0-windows"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
