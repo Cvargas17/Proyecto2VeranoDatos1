@@ -11,11 +11,17 @@ namespace Music_box.Tests
         public void FrecuenciaCorrecta_DeTodasLasNotas()
         {
             Assert.Equal(261.63, new Notamusical(Nota.DO, Figura.NEGRA, 1.0).frecuencia, 2);
+
             Assert.Equal(293.66, new Notamusical(Nota.RE, Figura.NEGRA, 1.0).frecuencia, 2);
+
             Assert.Equal(329.63, new Notamusical(Nota.MI, Figura.NEGRA, 1.0).frecuencia, 2);
+
             Assert.Equal(349.23, new Notamusical(Nota.FA, Figura.NEGRA, 1.0).frecuencia, 2);
+
             Assert.Equal(392.00, new Notamusical(Nota.SOL, Figura.NEGRA, 1.0).frecuencia, 2);
+
             Assert.Equal(440.00, new Notamusical(Nota.LA, Figura.NEGRA, 1.0).frecuencia, 2);
+
             Assert.Equal(493.88, new Notamusical(Nota.SI, Figura.NEGRA, 1.0).frecuencia, 2);
         }
 
@@ -26,10 +32,15 @@ namespace Music_box.Tests
             double negra = 1.0;
 
             Assert.Equal(4.0, new Notamusical(Nota.DO, Figura.REDONDA, negra).duracion, 2);
+
             Assert.Equal(2.0, new Notamusical(Nota.DO, Figura.BLANCA, negra).duracion, 2);
+
             Assert.Equal(1.0, new Notamusical(Nota.DO, Figura.NEGRA, negra).duracion, 2);
+
             Assert.Equal(0.5, new Notamusical(Nota.DO, Figura.CORCHEA, negra).duracion, 2);
+
             Assert.Equal(0.25, new Notamusical(Nota.DO, Figura.SEMICORCHEA, negra).duracion, 2);
+            
         }
     }
 
