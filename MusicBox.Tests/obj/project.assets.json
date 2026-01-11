@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {
+    "net10.0-windows7.0": {
       "coverlet.collector/6.0.4": {
         "type": "package",
         "build": {
@@ -393,6 +393,19 @@
         "build": {
           "build/net8.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "Music box/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Music box.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Music box.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       }
     }
   },
@@ -903,11 +916,17 @@
         "xunit.runner.visualstudio.3.1.4.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "Music box/1.0.0": {
+      "type": "project",
+      "path": "../Music box/Music box.csproj",
+      "msbuildProject": "../Music box/Music box.csproj"
     }
   },
   "projectFileDependencyGroups": {
-    "net10.0": [
+    "net10.0-windows7.0": [
       "Microsoft.NET.Test.Sdk >= 17.14.1",
+      "Music box >= 1.0.0",
       "coverlet.collector >= 6.0.4",
       "xunit >= 2.9.3",
       "xunit.runner.visualstudio >= 3.1.4"
@@ -934,15 +953,19 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
       ],
       "originalTargetFrameworks": [
-        "net10.0"
+        "net10.0-windows"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net10.0": {
-          "targetAlias": "net10.0",
-          "projectReferences": {}
+        "net10.0-windows7.0": {
+          "targetAlias": "net10.0-windows",
+          "projectReferences": {
+            "C:\\Users\\fbarr\\OneDrive\\Documentos\\GitHub\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj": {
+              "projectPath": "C:\\Users\\fbarr\\OneDrive\\Documentos\\GitHub\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -958,8 +981,8 @@
       "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
-      "net10.0": {
-        "targetAlias": "net10.0",
+      "net10.0-windows7.0": {
+        "targetAlias": "net10.0-windows",
         "dependencies": {
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
