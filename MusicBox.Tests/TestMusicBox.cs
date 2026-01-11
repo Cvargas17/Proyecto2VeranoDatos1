@@ -7,7 +7,7 @@ namespace Music_box.Tests
 {
     public class NotamusicalTests
     {
-        // Test 1: Frecuencias correctas de todas las notas
+        //test 1: frecuencias correctas de todas las notas
         [Fact]
         public void FrecuenciaCorrecta_DeTodasLasNotas()
         {
@@ -26,7 +26,7 @@ namespace Music_box.Tests
             Assert.Equal(493.88, new Notamusical(Nota.SI, Figura.NEGRA, 1.0).frecuencia, 2);
         }
 
-        // Test 2: Duración correcta de todas las figuras
+        //test 2: duración correcta de todas las figuras
         [Fact]
         public void DuracionCorrecta_DeTodasLasFiguras()
         {
@@ -47,7 +47,7 @@ namespace Music_box.Tests
 
     public class ListaDobleEnlazadaTests
     {
-        // Test 3: La lista inicia vacía
+        //test 3: la lista inicia vacía
         [Fact]
         public void Lista_IniciaVacia()
         {
@@ -55,7 +55,7 @@ namespace Music_box.Tests
             Assert.True(lista.EstaVacia());
         }
 
-        // Test 4: ObtenerCantidad inicia en cero
+        //test 4: obtenerCantidad inicia en cero
         [Fact]
         public void ObtenerCantidad_IniciaEnCero()
         {
@@ -63,7 +63,7 @@ namespace Music_box.Tests
             Assert.Equal(0, lista.ObtenerCantidad());
         }
 
-        // Test 5: Agregar un elemento aumenta la cantidad
+        //test 5: agregar un elemento aumenta la cantidad
         [Fact]
         public void Agregar_Elemento_AumentaCantidad()
         {
@@ -72,7 +72,7 @@ namespace Music_box.Tests
             Assert.Equal(1, lista.ObtenerCantidad());
         }
 
-        // Test 6: Enumerador devuelve elementos en orden
+        //test 6: enumerador devuelve elementos en orden
         [Fact]
         public void Enumerador_DevuelveElementosEnOrden()
         {
@@ -89,7 +89,7 @@ namespace Music_box.Tests
 
     public class NotamusicalExtraTests
     {
-        // Test 7: La frecuencia nunca es cero
+        //test 7: la frecuencia nunca es cero
         [Fact]
         public void Frecuencia_EsMayorQueCero()
         {
@@ -97,7 +97,7 @@ namespace Music_box.Tests
             Assert.True(nota.frecuencia > 0);
         }
 
-        // Test 8: La duración siempre es positiva
+        //test 8: la duración siempre es positiva
         [Fact]
         public void Duracion_EsMayorQueCero()
         {
@@ -105,7 +105,7 @@ namespace Music_box.Tests
             Assert.True(nota.duracion > 0);
         }
 
-        // Test 9: ToString no devuelve texto vacío
+        //test 9: toString no devuelve texto vacío
         [Fact]
         public void ToString_NoEstaVacio()
         {
@@ -113,7 +113,7 @@ namespace Music_box.Tests
             Assert.False(string.IsNullOrWhiteSpace(nota.ToString()));
         }
 
-        // Test 10: Enumerador inverso devuelve el orden correcto
+        //test 10: enumerador inverso devuelve el orden correcto
         [Fact]
         public void EnumeradorInverso_DevuelveOrdenInverso()
         {
