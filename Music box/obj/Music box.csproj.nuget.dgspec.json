@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fbarr\\OneDrive\\Documentos\\GitHub\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj": {}
+    "F:\\repos\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fbarr\\OneDrive\\Documentos\\GitHub\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj": {
+    "F:\\repos\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fbarr\\OneDrive\\Documentos\\GitHub\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj",
+        "projectUniqueName": "F:\\repos\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj",
         "projectName": "Music box",
-        "projectPath": "C:\\Users\\fbarr\\OneDrive\\Documentos\\GitHub\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj",
-        "packagesPath": "C:\\Users\\fbarr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fbarr\\OneDrive\\Documentos\\GitHub\\Proyecto2VeranoDatos1\\Music box\\obj\\",
+        "projectPath": "F:\\repos\\Proyecto2VeranoDatos1\\Music box\\Music box.csproj",
+        "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
+        "outputPath": "F:\\repos\\Proyecto2VeranoDatos1\\Music box\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\fbarr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+          "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0-windows"

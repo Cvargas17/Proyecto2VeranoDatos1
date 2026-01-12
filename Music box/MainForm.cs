@@ -65,7 +65,7 @@ namespace Music_box
             this.Controls.Add(lstNotas);
         }
 
-        private void BtnAgregar_Click(object sender, EventArgs e)
+        private void BtnAgregar_Click(object? sender, EventArgs e)
         {
             string input = txtInput.Text.Trim().ToUpper();
             if (string.IsNullOrEmpty(input))
@@ -103,12 +103,12 @@ namespace Music_box
             txtInput.Clear();
         }
 
-        private void BtnMostrar_Click(object sender, EventArgs e)
+        private void BtnMostrar_Click(object? sender, EventArgs e)
         {
             MessageBox.Show($"Hay {listaNotas.ObtenerCantidad()} notas en la lista.", "Notas", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void BtnGuardar_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click(object? sender, EventArgs e)
         {
             // Mostrar diálogo para cambiar la duración de la negra
             string input = Microsoft.VisualBasic.Interaction.InputBox(
@@ -148,7 +148,7 @@ namespace Music_box
             }
         }
 
-        private void BtnPlay_Click(object sender, EventArgs e)
+        private void BtnPlay_Click(object? sender, EventArgs e)
         {
             if (listaNotas.ObtenerCantidad() == 0)
             {
@@ -203,7 +203,7 @@ namespace Music_box
             }));
         }
 
-        private void BtnReversa_Click(object sender, EventArgs e)
+        private void BtnReversa_Click(object? sender, EventArgs e)
         {
             if (listaNotas.ObtenerCantidad() == 0)
             {
@@ -221,14 +221,14 @@ namespace Music_box
             reproduccionThread.Start();
         }
 
-        private void BtnLoop_Click(object sender, EventArgs e)
+        private void BtnLoop_Click(object? sender, EventArgs e)
         {
             isLooping = !isLooping;
             btnLoop.Text = isLooping ? "Loop: On" : "Loop: Off";
             btnLoop.BackColor = isLooping ? System.Drawing.Color.LightGreen : System.Drawing.SystemColors.Control;
         }
 
-        private void BtnPausa_Click(object sender, EventArgs e)
+        private void BtnPausa_Click(object? sender, EventArgs e)
         {
             isPaused = !isPaused;
             btnPausa.Text = isPaused ? "Reanudar" : "Pausa";
